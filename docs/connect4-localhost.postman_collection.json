@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "a3d9e48d-da84-428a-b37e-fc5484dbb65c",
-		"name": "connect4",
+		"_postman_id": "08d272cf-e53b-4f9a-88f8-694d286f3e5d",
+		"name": "connect4-localhost",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

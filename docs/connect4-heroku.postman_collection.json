@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "a3d9e48d-da84-428a-b37e-fc5484dbb65c",
+		"name": "connect4-heroku",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "START GAME",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-C4-TrackingId",
+						"value": "postman-start-test",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://innovationchef-connect4.herokuapp.com/v1/connect4/start",
+					"protocol": "https",
+					"host": [
+						"innovationchef-connect4",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"connect4",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PLAY MOVE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "X-C4-TrackingId",
+						"value": "postman-start-move",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sessionId\": \"60bb44cb-fb54-4f58-83d7-dcab48d67e52\",\r\n    \"player\": \"YELLOW\",\r\n    \"position\": 6\r\n}"
+				},
+				"url": {
+					"raw": "https://innovationchef-connect4.herokuapp.com/v1/connect4/move",
+					"protocol": "https",
+					"host": [
+						"innovationchef-connect4",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"connect4",
+						"move"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HEARTBEAT",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "X-C4-TrackingId",
+						"type": "text",
+						"value": "postman-heartbeat"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://innovationchef-connect4.herokuapp.com/v1/connect4/heartbeat",
+					"protocol": "https",
+					"host": [
+						"innovationchef-connect4",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"connect4",
+						"heartbeat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET MATCH STATUS",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "X-C4-TrackingId",
+						"type": "text",
+						"value": "postman-heartbeat"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"sessionId\":  \"60bb44cb-fb54-4f58-83d7-dcab48d67e52\"\r\n}"
+				},
+				"url": {
+					"raw": "https://innovationchef-connect4.herokuapp.com/v1/connect4/view",
+					"protocol": "https",
+					"host": [
+						"innovationchef-connect4",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"v1",
+						"connect4",
+						"view"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
