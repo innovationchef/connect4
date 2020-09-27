@@ -1,5 +1,10 @@
 Link to application API hosted on heroku -
 
+Swagger Link - 
+```
+https://innovationchef-connect4.herokuapp.com/swagger-ui/#/
+```
+
 Base URL - 
 ```
 https://git.heroku.com/innovationchef-connect4.git
