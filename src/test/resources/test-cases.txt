@@ -1,0 +1,40 @@
+Start: Yellow
+Red: 2, 4, 6, 7, 5, 4, 3, 2, 1, 2, 4
+Yellow: 1, 3, 5, 7, 6, 5, 3, 2, 1, 1, 3
+Winner: Red
+END
+Start: Yellow
+Red: 2, 4, 3, 3, 2, 7, 7, 1, 6, 1, 4, 6, 3, 5
+Yellow: 1, 3, 5, 5, 6, 4, 5, 6, 3, 1, 2, 7, 4, 1
+Winner: Red
+END
+Start: Yellow
+Red: 7, 6, 2, 6, 7, 1, 6
+Yellow: 1, 2, 3, 1, 6, 2, 6, 4
+Winner: Yellow
+END
+Start: Yellow
+Red: 2, 3, 4, 5, 5, 5, 1, 2
+Yellow: 1, 3, 4, 4, 4, 5, 5, 2, 3
+Winner: Yellow
+END
+Start: Yellow
+Red: 7, 7, 7, 5
+Yellow: 2, 4, 5, 6, 3
+Winner: Yellow
+END
+Start: Yellow
+Red: 2, 4, 6, 6, 4, 2, 2, 4, 6, 7, 5, 3, 1, 1, 3, 5, 7, 6, 5, 3, 1
+Blue: 1, 3, 5, 7, 5, 3, 1, 3, 5, 7, 6, 4, 2, 1, 2, 4, 6, 7, 7, 4, 2
+Winner: Yellow
+END
+Start: Yellow
+Red: 5, 5, 5
+Blue: 1, 4, 3, 2
+Winner: Yellow
+END
+Start: Yellow
+Red: 3, 4, 2, 5, 5, 5, 4
+Blue: 3, 4, 1, 3, 5, 3, 3
+Winner: Red
+END
