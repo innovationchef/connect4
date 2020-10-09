@@ -84,3 +84,35 @@ curl --request GET 'http://localhost:8080/v1/connect4/heartbeat' \
      --header 'X-C4-TrackingId: postman-heartbeat' \
      --data-raw ''
 ```
+
+### TODO
+- [ ] Programming Basics
+    - [x] Strategy Design Pattern
+    - [x] Builder Design Pattern
+    - [x] Java Generics
+    - [x] Constant & Enum Usages
+    - [x] Exception declaration & Management
+    - [x] Object 2 Json Conversions & vice-versa
+    - [x] Project package structure 
+    - [x] Utility class usages
+    - [x] Utility class usages
+- [ ] Documentation 
+    - [x] .gitignore usage
+    - [x] ReadMe.md & documentation formats
+    - [x] Changelog format
+- [ ] Database Related
+    - [x] Hibernate
+    - [x] Hibernate Enum Converter
+    - [x] H2 Database Usages
+- [ ] Rest APIs with spring-boot
+    - [x] REST API 
+    - [x] @Controller Advice Usage
+    - [x] HTTP Request Interceptor
+    - [x] Swagger setup 
+- [ ] Enterprise Application practices
+    - [x] Log4j2 Implementation
+    - [x] Spring profiles
+- [ ] Unit & Integration Testing
+    - [x] Unit Testing with JUnit5
+    - [x] Declaration of separate resources for test scope
+
