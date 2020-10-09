@@ -25,7 +25,7 @@ public class BlockMatchStrategy implements GameStrategy {
         this.trackVisit = trackVisit;
     }
 
-    // To be implemented
+    // TODO: To be implemented
     @Override
     public void verifyBoard(Coordinate c) {
 

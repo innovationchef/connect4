@@ -86,33 +86,51 @@ curl --request GET 'http://localhost:8080/v1/connect4/heartbeat' \
 ```
 
 ### TODO
-- [ ] Programming Basics
-    - [x] Strategy Design Pattern
-    - [x] Builder Design Pattern
+- [ ] Java & Spring Basics
+    - [x] Strategy design pattern
+    - [x] Builder design pattern
     - [x] Java Generics
-    - [x] Constant & Enum Usages
-    - [x] Exception declaration & Management
-    - [x] Object 2 Json Conversions & vice-versa
+    - [x] Constant & enum usages
+    - [x] Exception declaration & management
+    - [x] Object 2 Json conversions & vice-versa
     - [x] Project package structure 
     - [x] Utility class usages
     - [x] Utility class usages
+    - [x] Java 8 Optional & Streams
+    - [x] Placement of code comments & documentation blocks
+    - [ ] Usage of spring application lifecycle events 
 - [ ] Documentation 
     - [x] .gitignore usage
     - [x] ReadMe.md & documentation formats
     - [x] Changelog format
 - [ ] Database Related
-    - [x] Hibernate
-    - [x] Hibernate Enum Converter
-    - [x] H2 Database Usages
+    - [x] Hibernate ORM
+    - [x] Table joins & @Formula usages
+    - [x] Hibernate enum converter
+    - [x] H2 Database usage
+    - [x] Spring transaction management
 - [ ] Rest APIs with spring-boot
     - [x] REST API 
     - [x] @Controller Advice Usage
     - [x] HTTP Request Interceptor
     - [x] Swagger setup 
+    - [x] API payload validations
+    - [ ] API Security
+    - [ ] HTTP request response log capture
 - [ ] Enterprise Application practices
     - [x] Log4j2 Implementation
+    - [x] Log4j2 patterns & appenders
     - [x] Spring profiles
+    - [ ] Application health monitoring using spring-actuators
 - [ ] Unit & Integration Testing
     - [x] Unit Testing with JUnit5
     - [x] Declaration of separate resources for test scope
-
+    - [ ] Mocks & Stubs usages
+    - [ ] REST API unit testing
+    - [ ] Maven surefire & failsafe plugin usages
+- [ ] Deployment & Automation pipelines
+    - [ ] Build scripts
+    - [ ] Dockerfile
+    - [ ] Jenkinsfile
+    - [ ] Kubernetes deployment scripts
+    
