@@ -10,7 +10,7 @@ import lombok.ToString;
 @ToString
 public class Move {
 
-    Integer move;
-    Coordinate coordinate;
-    Player player;
+    private Integer move;
+    private Coordinate coordinate;
+    private Player player;
 }

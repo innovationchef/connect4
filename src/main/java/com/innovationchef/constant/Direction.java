@@ -3,39 +3,39 @@ package com.innovationchef.constant;
 public enum Direction {
     L, R, U, D, LU, LD, RU, RD, CENTER;
 
-    public boolean isU() {
-        return isCenter() || this == U;
+    public boolean isCU() {
+        return isC() || this == U;
     }
 
-    public boolean isR() {
-        return isCenter() || this == R;
+    public boolean isCR() {
+        return isC() || this == R;
     }
 
-    public boolean isL() {
-        return isCenter() || this == L;
+    public boolean isCL() {
+        return isC() || this == L;
     }
 
-    public boolean isD() {
-        return isCenter() || this == D;
+    public boolean isCD() {
+        return isC() || this == D;
     }
 
-    public boolean isRU() {
-        return isCenter() || this == RU;
+    public boolean isCRU() {
+        return isC() || this == RU;
     }
 
-    public boolean isRD() {
-        return isCenter() || this == RD;
+    public boolean isCRD() {
+        return isC() || this == RD;
     }
 
-    public boolean isLU() {
-        return isCenter() || this == LU;
+    public boolean isCLU() {
+        return isC() || this == LU;
     }
 
-    public boolean isLD() {
-        return isCenter() || this == LD;
+    public boolean isCLD() {
+        return isC() || this == LD;
     }
 
-    public boolean isCenter() {
+    public boolean isC() {
         return this == CENTER;
     }
 }

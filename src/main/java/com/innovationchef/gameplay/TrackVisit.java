@@ -1,4 +1,4 @@
-package com.innovationchef.service;
+package com.innovationchef.gameplay;
 
 import com.innovationchef.constant.Player;
 import com.innovationchef.model.Coordinate;
@@ -25,13 +25,13 @@ public class TrackVisit {
     }
 
     public void visit(Coordinate c) {
-        visited[c.i()][c.j()] = true;
+        this.visited[c.i()][c.j()] = true;
     }
 
     public boolean fwd() {
         this.stepsTaken++;
-        if(this.stepsTaken == connectMax) {
-            playerWon = true;
+        if(this.stepsTaken == this.connectMax) {
+            this.playerWon = true;
             return true;
         }
         return false;
@@ -45,11 +45,19 @@ public class TrackVisit {
         return this.stepsTaken;
     }
 
+    public void championFound(boolean val) {
+        this.playerWon = val;
+    }
+
     public boolean championFound() {
-        return playerWon;
+        return this.playerWon;
     }
 
     public Player getPlayer() {
-        return player;
+        return this.player;
+    }
+
+    public int getConnectMax() {
+        return this.connectMax;
     }
 }

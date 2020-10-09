@@ -20,9 +20,8 @@ public class RequestInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String trackingId = request.getHeader(ApiConstant.TRACKING_ID);
         request.setAttribute(START_TIME, System.currentTimeMillis());
-        if (trackingId == null) {
+        if (trackingId == null)
             throw new ApiHeaderMissingException();
-        }
         ThreadContext.put(ApiConstant.LOG_CONTEXT, trackingId);
         return true;
     }

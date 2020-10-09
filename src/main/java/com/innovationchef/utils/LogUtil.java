@@ -8,6 +8,8 @@ import java.util.Arrays;
 public final class LogUtil {
     private static final Logger LOGGER = LogManager.getLogger(LogUtil.class);
 
+    private LogUtil() {}
+
     public static void prettyPrint(int[][] arr) {
         for (int i = 0; i < arr.length; i++) {
             StringBuilder sb = new StringBuilder();

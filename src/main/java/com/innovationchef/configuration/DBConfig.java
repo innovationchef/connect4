@@ -18,7 +18,9 @@ import java.util.Properties;
 @Configuration
 @ConfigurationProperties("connect4.db")
 public class DBConfig {
+
     public static final String ENTITY_PACKAGE = "com.innovationchef.entity";
+
     private String url;
     private String username;
     private String password;
@@ -48,7 +50,6 @@ public class DBConfig {
         Properties properties = new Properties();
         properties.setProperty("hibernate.dialect", dialect);
         properties.setProperty("hibernate.hbm2ddl.auto", hbm2ddl);
-        properties.setProperty("hibernate.id.new_generator_mappings", "true");
         LocalSessionFactoryBean sessionFactoryBean = new LocalSessionFactoryBean();
         sessionFactoryBean.setDataSource(dataSource);
         sessionFactoryBean.setPackagesToScan(ENTITY_PACKAGE);

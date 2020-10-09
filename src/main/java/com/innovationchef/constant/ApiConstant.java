@@ -2,6 +2,8 @@ package com.innovationchef.constant;
 
 public final class ApiConstant {
 
+    private ApiConstant() {}
+
     public static final String TRACKING_ID = "X-C4-TrackingId";
     public static final String LOG_CONTEXT = "trackingId";
 

@@ -5,6 +5,7 @@ import com.innovationchef.constant.Player;
 import javax.persistence.AttributeConverter;
 
 public class PlayerConverter implements AttributeConverter<Player, Integer> {
+
     @Override
     public Integer convertToDatabaseColumn(Player player) {
         return player.val();

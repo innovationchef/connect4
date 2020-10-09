@@ -4,7 +4,7 @@ import com.innovationchef.constant.ApiConstant;
 import com.innovationchef.model.ApiResponse;
 import com.innovationchef.model.GameStartRes;
 import com.innovationchef.model.GameMoveReq;
-import com.innovationchef.service.BizExecution;
+import com.innovationchef.service.GameExecution;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,9 +16,9 @@ import javax.validation.Valid;
 @RequestMapping("v1")
 public class GameControllerV1 extends BaseController {
 
-    private BizExecution execution;
+    private GameExecution execution;
 
-    public GameControllerV1(BizExecution execution) {
+    public GameControllerV1(GameExecution execution) {
         this.execution = execution;
     }
 

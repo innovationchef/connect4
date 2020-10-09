@@ -1,9 +1,11 @@
 package com.innovationchef.entity;
 
+import com.innovationchef.constant.DBConstant;
 import com.innovationchef.constant.Player;
 import com.innovationchef.support.BooleanConverter;
 import com.innovationchef.support.PlayerConverter;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Formula;
@@ -13,18 +15,16 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Setter
 @Getter
-@Builder
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Table(name = "CONNECT4_GAME_DATA")
+@Table(name = DBConstant.CONNECT4_GAME_DATA_TBL)
 public class Connect4GameData implements Serializable {
 
     @Id
-    @Column(name = "TID")
+    @Column(name = DBConstant.CONNECT4_DB_KEY)
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int tid;
 
@@ -63,4 +63,67 @@ public class Connect4GameData implements Serializable {
     @Fetch(FetchMode.SELECT)
     private List<Connect4MatchData> matchData = new ArrayList<>();
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    public boolean exceedsMaxMoves() {
+        return this.getCurrMove() >= this.getMaxMoves();
+    }
+
+    public Connect4GameData togglePlayer() {
+        this.nextPlayer = Player.otherPlayer(nextPlayer);
+        return this;
+    }
+
+    public Connect4GameData incrementMove() {
+        this.currMove++;
+        return this;
+    }
+
+    /*
+     * Example of Builder Design Pattern from Gang of Four
+     */
+    public static class Builder {
+        private String sessionId;
+        private Player nextPlayer;
+        private int maxMoves;
+        private int row;
+        private int col;
+        private int num;
+        private int currMove;
+        private boolean isSessionOver;
+        private int[][] data;
+
+        public Builder initializeBoard(int row, int col, int num) {
+            this.row = row;
+            this.col = col;
+            this.num = num;
+            this.data = new int[row][col];
+            this.currMove = 0;
+            this.isSessionOver = false;
+            this.maxMoves = row * col;
+            this.sessionId = UUID.randomUUID().toString();
+            return this;
+        }
+
+        public Builder withPlayer(Player initPlayer) {
+            this.nextPlayer = initPlayer;
+            return this;
+        }
+
+        public Connect4GameData build() {
+            Connect4GameData data = new Connect4GameData();
+            data.setNum(this.num);
+            data.setCol(this.col);
+            data.setRow(this.row);
+            data.setCurrMove(this.currMove);
+            data.setSessionOver(this.isSessionOver);
+            data.setMaxMoves(this.maxMoves);
+            data.setData(this.data);
+            data.setNextPlayer(this.nextPlayer);
+            data.setSessionId(this.sessionId);
+            return data;
+        }
+    }
 }

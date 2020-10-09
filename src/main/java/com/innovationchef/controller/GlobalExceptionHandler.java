@@ -2,10 +2,7 @@ package com.innovationchef.controller;
 
 import com.innovationchef.constant.ApiConstant;
 import com.innovationchef.constant.GameMessage;
-import com.innovationchef.exception.ApiHeaderMissingException;
-import com.innovationchef.exception.IllegalMoveException;
-import com.innovationchef.exception.InvalidSessionIdException;
-import com.innovationchef.exception.MaxMovesReachedException;
+import com.innovationchef.exception.*;
 import com.innovationchef.model.ApiResponse;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpHeaders;
@@ -80,6 +77,14 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     public ApiResponse handleApiHeaderMissingException(MaxMovesReachedException ex, WebRequest request) {
         log.error(ex);
         return handleException(GameMessage.GAME_OVER);
+    }
+
+    @ResponseBody
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(value = {InvalidMoveException.class})
+    public ApiResponse handleApiHeaderMissingException(InvalidMoveException ex, WebRequest request) {
+        log.error(ex);
+        return handleException(GameMessage.INVALID_MOVE);
     }
 
     @ResponseBody

@@ -28,7 +28,7 @@ public enum Player {
 
     @JsonCreator
     public static Player fromString(String value) {
-        switch (value) {
+        switch (value.toUpperCase()) {
             case "RED":
                 return RED;
             case "YELLOW":

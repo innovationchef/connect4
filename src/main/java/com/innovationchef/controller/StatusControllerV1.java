@@ -4,7 +4,7 @@ import com.innovationchef.constant.ApiConstant;
 import com.innovationchef.model.GameStatusReq;
 import com.innovationchef.model.GameStatusRes;
 import com.innovationchef.model.Move;
-import com.innovationchef.service.BizExecution;
+import com.innovationchef.service.GameExecution;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,9 +17,9 @@ import java.util.List;
 @RequestMapping("v1")
 public class StatusControllerV1 extends BaseController {
 
-    private BizExecution execution;
+    private GameExecution execution;
 
-    public StatusControllerV1(BizExecution execution) {
+    public StatusControllerV1(GameExecution execution) {
         this.execution = execution;
     }
 

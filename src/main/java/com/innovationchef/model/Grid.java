@@ -1,6 +1,7 @@
 package com.innovationchef.model;
 
 import com.innovationchef.constant.Player;
+import com.innovationchef.exception.InvalidMoveException;
 
 public class Grid {
     private int[][] representation;
@@ -24,19 +25,27 @@ public class Grid {
         return new Grid(row, col, preloadedRep);
     }
 
-    public int fill(Player player, int j) {
-        if (j < 0 || j > this.col) return -1;
+    public int dropCoin(Player player, int j) {
+        if (j < 0 || j > this.col) throw new InvalidMoveException();
         for (int i = 0; i < this.row; i++) {
             if (this.representation[i][j] == 0) {
                 this.representation[i][j] = player.val();
                 return i;
             }
         }
-        return -1;
+        throw new InvalidMoveException();
     }
 
     public int[][] getRep() {
         return this.representation;
+    }
+
+    public int getRow() {
+        return this.row;
+    }
+
+    public int getCol() {
+        return this.col;
     }
 
     public Player getPlayer(Coordinate coordinate) {

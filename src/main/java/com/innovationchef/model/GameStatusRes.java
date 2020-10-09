@@ -12,7 +12,7 @@ import java.util.List;
 @ToString
 public class GameStatusRes extends ApiResponse {
 
-    List<Move> moves = new ArrayList<>();
+    private List<Move> moves = new ArrayList<>();
     private String sessionId;
 
     public GameStatusRes(boolean status, String message) {

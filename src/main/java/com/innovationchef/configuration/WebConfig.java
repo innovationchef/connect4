@@ -18,6 +18,7 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
+        // Path pattern added so that swagger endpoints does not go through header request interceptor
         registry.addInterceptor(this.interceptor).addPathPatterns("/v1/**");
     }
 }
