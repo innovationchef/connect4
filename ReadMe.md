@@ -18,6 +18,10 @@ Apache Maven 3.6.1
 ~~~
 
 ### How to run
+To run the unit/integration test cases before running the application - 
+~~~
+mvn test
+~~~
 This is a standard Spring Framework project. To run the project directly - 
 ~~~
 mvn spring-boot:run
@@ -125,9 +129,10 @@ curl --request GET 'http://localhost:8080/v1/connect4/heartbeat' \
 - [ ] Unit & Integration Testing
     - [x] Unit Testing with JUnit5
     - [x] Declaration of separate resources for test scope
-    - [ ] Mocks & Stubs usages
-    - [ ] REST API unit testing
+    - [x] Mocks & Stubs usages
+    - [x] REST API unit testing
     - [ ] Maven surefire & failsafe plugin usages
+    - [ ] jacoco code coverage
 - [ ] Deployment & Automation pipelines
     - [ ] Build scripts
     - [ ] Dockerfile

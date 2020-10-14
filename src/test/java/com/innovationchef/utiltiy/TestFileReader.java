@@ -1,6 +1,6 @@
 package com.innovationchef.utiltiy;
 
-import com.innovationchef.ApplicationTests;
+import com.innovationchef.ApplicationUnitTests;
 import com.innovationchef.constant.Player;
 import com.innovationchef.model.TestMoveSequence;
 
@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 public class TestFileReader {
 
     public static BufferedReader fileReader(String filename) {
-        ClassLoader classLoader = ApplicationTests.class.getClassLoader();
+        ClassLoader classLoader = ApplicationUnitTests.class.getClassLoader();
         InputStream is = classLoader.getResourceAsStream(filename);
         return new BufferedReader(new InputStreamReader(is));
     }

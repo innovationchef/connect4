@@ -66,7 +66,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = {ApiHeaderMissingException.class})
-    public ApiResponse handleApiHeaderMissingException(InvalidSessionIdException ex, WebRequest request) {
+    public ApiResponse handleApiHeaderMissingException(ApiHeaderMissingException ex, WebRequest request) {
         log.error(ex);
         return handleException(ApiConstant.MANDY_FIELDS_ABSENT);
     }
@@ -74,7 +74,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = {MaxMovesReachedException.class})
-    public ApiResponse handleApiHeaderMissingException(MaxMovesReachedException ex, WebRequest request) {
+    public ApiResponse handleMaxMovesReachedException(MaxMovesReachedException ex, WebRequest request) {
         log.error(ex);
         return handleException(GameMessage.GAME_OVER);
     }
@@ -82,7 +82,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(value = {InvalidMoveException.class})
-    public ApiResponse handleApiHeaderMissingException(InvalidMoveException ex, WebRequest request) {
+    public ApiResponse handleInvalidMoveException(InvalidMoveException ex, WebRequest request) {
         log.error(ex);
         return handleException(GameMessage.INVALID_MOVE);
     }
