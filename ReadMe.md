@@ -1,7 +1,7 @@
 # Connect4 Game Backend
 
 ### Description
-This code has been developed as a part of Pratilipi Hiring Challenge conducted on Hackerearth.
+This code has been developed as a part of XXXXX Hiring Challenge conducted on YYYY Platform.
 This application provides the backend APIs for the connect4 game. <br>
 To know more or get your hands dirty, please visit - https://www.mathsisfun.com/games/connect4.html <br>
 
@@ -30,7 +30,7 @@ To build a jar and run it -
 ~~~
 mvn clean package
 cd target/
-java -Dserver.port=8080 -jar connect4-pratilipi-0.0.1.jar
+java -Dserver.port=8080 -jar connect4-0.0.1.jar
 ~~~
 
 ### How to use

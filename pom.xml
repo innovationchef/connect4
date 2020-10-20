@@ -11,10 +11,10 @@
     </parent>
 
     <groupId>com.innovationchef</groupId>
-    <artifactId>connect4-pratilipi</artifactId>
+    <artifactId>connect4</artifactId>
     <version>0.0.1</version>
 
-    <name>Pratilipi Hiring Challenge</name>
+    <name>Connect4 Game Backend</name>
     <description>Create APIs for https://www.mathsisfun.com/games/connect4.html Game</description>
     <packaging>jar</packaging>
 
