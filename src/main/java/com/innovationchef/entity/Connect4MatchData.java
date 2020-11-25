@@ -5,18 +5,10 @@ import com.innovationchef.constant.Player;
 import com.innovationchef.model.Coordinate;
 import com.innovationchef.model.Move;
 import com.innovationchef.support.PlayerConverter;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
 
-@Setter
-@Getter
-@ToString
-@NoArgsConstructor
 @Entity
 @Table(name = DBConstant.CONNECT4_MATCH_DATA_TBL)
 public class Connect4MatchData implements Serializable {
@@ -43,13 +35,17 @@ public class Connect4MatchData implements Serializable {
     @JoinColumn(name = "SESSION_ID", referencedColumnName = "SESSION_ID")
     private Connect4GameData gameData;
 
+    public int getMoveNo() {
+        return moveNo;
+    }
+
     public static Builder builder() {
         return new Builder();
     }
 
     public Move getMove() {
         Move move = new Move();
-        move.setCoordinate(new Coordinate(this.getRow(), this.getCol(), gameData.getRow(), gameData.getCol()));
+        move.setCoordinate(new Coordinate(this.row, this.col, gameData.getRow(), gameData.getCol()));
         move.setMove(this.moveNo);
         move.setPlayer(this.player);
         return move;

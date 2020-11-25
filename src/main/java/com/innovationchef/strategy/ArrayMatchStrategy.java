@@ -29,16 +29,16 @@ import java.util.stream.Stream;
  */
 public class ArrayMatchStrategy implements GameStrategy {
 
-    public Grid grid;
-    public TrackVisit trackVisit;
+    public final Grid grid;
+    public final TrackVisit trackVisit;
 
-    public ArrayMatchStrategy(Grid grid, TrackVisit trackVisit) {
+    public ArrayMatchStrategy(final Grid grid, final TrackVisit trackVisit) {
         this.grid = grid;
         this.trackVisit = trackVisit;
     }
 
     @Override
-    public void verifyBoard(Coordinate c) {
+    public void verifyBoard(final Coordinate c) {
         MatchPerDirection matchPerDirection = new MatchPerDirection();
         visit(this.grid, this.trackVisit, c, Direction.CENTER, matchPerDirection);
         int max = Stream.of(matchPerDirection.L + matchPerDirection.R,

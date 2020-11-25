@@ -4,8 +4,6 @@ import com.innovationchef.constant.DBConstant;
 import com.innovationchef.constant.Player;
 import com.innovationchef.support.BooleanConverter;
 import com.innovationchef.support.PlayerConverter;
-import lombok.Getter;
-import lombok.Setter;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Formula;
@@ -17,19 +15,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@Setter
-@Getter
 @Entity
 @Table(name = DBConstant.CONNECT4_GAME_DATA_TBL)
 public class Connect4GameData implements Serializable {
 
     @Id
-    @Column(name = DBConstant.CONNECT4_DB_KEY)
+    @Column(name = DBConstant.CONNECT4_DB_KEY, updatable = false)
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int tid;
 
     @NaturalId
-    @Column(name = "SESSION_ID")
+    @Column(name = "SESSION_ID", updatable = false)
     private String sessionId;
 
     @Column(name = "NEXT_PLAYER")
@@ -39,13 +35,13 @@ public class Connect4GameData implements Serializable {
     @Formula("ROWN * COLN")
     private int maxMoves;
 
-    @Column(name = "ROWN")
+    @Column(name = "ROWN", updatable = false)
     private int row;
 
-    @Column(name = "COLN")
+    @Column(name = "COLN", updatable = false)
     private int col;
 
-    @Column(name = "NUM")
+    @Column(name = "NUM", updatable = false)
     private int num;
 
     @Column(name = "CURR_MOVE")
@@ -63,12 +59,28 @@ public class Connect4GameData implements Serializable {
     @Fetch(FetchMode.SELECT)
     private List<Connect4MatchData> matchData = new ArrayList<>();
 
+    public int getRow() {
+        return row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
+    public int[][] getData() {
+        return data;
+    }
+
     public static Builder builder() {
         return new Builder();
     }
 
     public boolean exceedsMaxMoves() {
-        return this.getCurrMove() >= this.getMaxMoves();
+        return this.currMove >= this.maxMoves;
     }
 
     public Connect4GameData togglePlayer() {
@@ -79,6 +91,30 @@ public class Connect4GameData implements Serializable {
     public Connect4GameData incrementMove() {
         this.currMove++;
         return this;
+    }
+
+    public String getSessionId() {
+        return sessionId;
+    }
+
+    public List<Connect4MatchData> getMatchData() {
+        return matchData;
+    }
+
+    public Player getNextPlayer() {
+        return nextPlayer;
+    }
+
+    public int getCurrMove() {
+        return currMove;
+    }
+
+    public boolean isSessionOver() {
+        return isSessionOver;
+    }
+
+    public void setSessionOver(boolean sessionOver) {
+        isSessionOver = sessionOver;
     }
 
     /*
@@ -114,15 +150,15 @@ public class Connect4GameData implements Serializable {
 
         public Connect4GameData build() {
             Connect4GameData data = new Connect4GameData();
-            data.setNum(this.num);
-            data.setCol(this.col);
-            data.setRow(this.row);
-            data.setCurrMove(this.currMove);
-            data.setSessionOver(this.isSessionOver);
-            data.setMaxMoves(this.maxMoves);
-            data.setData(this.data);
-            data.setNextPlayer(this.nextPlayer);
-            data.setSessionId(this.sessionId);
+            data.num = this.num;
+            data.col = this.col;
+            data.row = this.row;
+            data.currMove = this.currMove;
+            data.isSessionOver = this.isSessionOver;
+            data.maxMoves = this.maxMoves;
+            data.data = this.data;
+            data.nextPlayer = this.nextPlayer;
+            data.sessionId = this.sessionId;
             return data;
         }
     }

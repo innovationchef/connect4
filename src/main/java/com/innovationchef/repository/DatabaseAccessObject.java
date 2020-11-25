@@ -33,7 +33,7 @@ public class DatabaseAccessObject {
     }
 
     @Transactional
-    public void dbHealthCheck() {
+    public void ping() {
         this.sessionFactory.getCurrentSession().createSQLQuery(testConnQuery).getFirstResult();
     }
 }

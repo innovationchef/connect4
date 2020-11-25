@@ -7,5 +7,5 @@ import com.innovationchef.model.Coordinate;
  */
 public interface GameStrategy {
 
-    void verifyBoard(Coordinate c);
+    void verifyBoard(final Coordinate c);
 }

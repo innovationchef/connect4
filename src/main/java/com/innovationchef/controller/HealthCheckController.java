@@ -23,7 +23,7 @@ public class HealthCheckController extends BaseController {
 
     @GetMapping(value = HEARTBEAT, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ApiResponse> initializeGame() {
-        this.dao.dbHealthCheck();
+        this.dao.ping();
         return ResponseEntity.ok(ApiResponse.builder()
                 .success(true)
                 .message(ApiConstant.HEALTHY)

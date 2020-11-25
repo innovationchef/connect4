@@ -51,7 +51,7 @@ public class ControllerTests {
 
     @Test
     public void heartbeatTest() throws Exception {
-        doNothing().when(dao).dbHealthCheck();
+        doNothing().when(dao).ping();
         mockMvc.perform(get(HEARTBEAT)
                 .header("X-C4-TrackingId", "random-value")
                 .contentType(MediaType.APPLICATION_JSON))
@@ -61,7 +61,7 @@ public class ControllerTests {
 
     @Test
     public void headerMissingExceptionTest() throws Exception {
-        doNothing().when(dao).dbHealthCheck();
+        doNothing().when(dao).ping();
         mockMvc.perform(get(HEARTBEAT)
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().is4xxClientError())

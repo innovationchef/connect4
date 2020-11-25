@@ -10,9 +10,9 @@ public final class LogUtil {
 
     private LogUtil() {}
 
-    public static void prettyPrint(int[][] arr) {
+    public static void prettyPrint(final int[][] arr) {
         for (int i = 0; i < arr.length; i++) {
-            StringBuilder sb = new StringBuilder();
+            final StringBuilder sb = new StringBuilder();
             Arrays.stream(arr[i]).forEach(x -> sb.append(x).append("\t"));
             LOGGER.info(sb.toString());
         }

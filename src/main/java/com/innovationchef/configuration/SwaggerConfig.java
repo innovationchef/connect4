@@ -16,6 +16,16 @@ import java.util.Collections;
 @EnableSwagger2
 public class SwaggerConfig {
 
+    public static final String API_TITLE = "Connect4 Game APIs";
+    public static final String API_DESC = "APIs to support the connect4 game play";
+    public static final String API_VERSION1 = "v1";
+    public static final String API_TERMS_URL = "https://github.com/innovationchef/connect4/blob/master/LICENSE";
+    public static final String API_LICENSE = "License of API";
+    public static final String API_LICENSE_URL = "API license URL";
+    public static final String CONTACT_NAME = "Ankit Lohani";
+    public static final String CONTACT_EMAIL = "lohani.1575@gmail.com";
+    public static final String CONTACT_URL = "https://www.linkedin.com/in/innovationchef/";
+
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -27,11 +37,11 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfo(
-                "Connect4 Game APIs",
-                "APIs to support the connect4 game play",
-                "v1",
-                "Terms of service",
-                new Contact("Ankit Lohani", "https://www.linkedin.com/in/innovationchef/", "lohani.1575@gmail.com"),
-                "License of API", "API license URL", Collections.emptyList());
+                API_TITLE,
+                API_DESC,
+                API_VERSION1,
+                API_TERMS_URL,
+                new Contact(CONTACT_NAME, CONTACT_URL, CONTACT_EMAIL),
+                API_LICENSE, API_LICENSE_URL, Collections.emptyList());
     }
 }

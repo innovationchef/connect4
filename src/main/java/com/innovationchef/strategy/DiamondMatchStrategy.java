@@ -27,7 +27,7 @@ public class DiamondMatchStrategy implements GameStrategy {
 
     // TODO: To be implemented
     @Override
-    public void verifyBoard(Coordinate c) {
+    public void verifyBoard(final Coordinate c) {
 
     }
 }
