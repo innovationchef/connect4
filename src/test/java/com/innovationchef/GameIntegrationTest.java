@@ -6,7 +6,6 @@ import com.innovationchef.model.GameMoveReq;
 import com.innovationchef.model.TestMoveSequence;
 import com.innovationchef.service.GameExecution;
 import com.innovationchef.utiltiy.TestFileReader;
-import org.junit.Assert;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +15,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
@@ -89,8 +89,8 @@ public class GameIntegrationTest {
                 req.setColumn(player1.next());
                 req.setPlayer(tCase.getBeginner());
             }
-            if (i != totSteps) Assert.assertEquals("VALID", execution.makeMove(req));
-            else Assert.assertEquals("PLAYER " + tCase.getWinner().name() + " WINS", execution.makeMove(req));
+            if (i != totSteps) assertEquals("VALID", execution.makeMove(req));
+            else assertEquals("PLAYER " + tCase.getWinner().name() + " WINS", execution.makeMove(req));
             i++;
         }
         if (player1.hasNext()) {
@@ -98,8 +98,8 @@ public class GameIntegrationTest {
             req.setColumn(player1.next());
             req.setPlayer(tCase.getBeginner());
             req.setSessionId(sessionId);
-            if (i != totSteps) Assert.assertEquals("VALID", execution.makeMove(req));
-            else Assert.assertEquals("PLAYER " + tCase.getWinner().name() + " WINS", execution.makeMove(req));
+            if (i != totSteps) assertEquals("VALID", execution.makeMove(req));
+            else assertEquals("PLAYER " + tCase.getWinner().name() + " WINS", execution.makeMove(req));
             // log.info(execution.makeMove(req));
         }
         if (player2.hasNext()) {
@@ -107,8 +107,8 @@ public class GameIntegrationTest {
             req.setColumn(player2.next());
             req.setPlayer(Player.otherPlayer(tCase.getBeginner()));
             req.setSessionId(sessionId);
-            if (i != totSteps) Assert.assertEquals("VALID", execution.makeMove(req));
-            else Assert.assertEquals("PLAYER " + tCase.getWinner().name() + " WINS", execution.makeMove(req));
+            if (i != totSteps) assertEquals("VALID", execution.makeMove(req));
+            else assertEquals("PLAYER " + tCase.getWinner().name() + " WINS", execution.makeMove(req));
         }
     }
 }

@@ -8,10 +8,12 @@ import com.innovationchef.service.GameExecution;
 import com.innovationchef.strategy.ArrayMatchStrategy;
 import com.innovationchef.strategy.GameStrategy;
 import com.innovationchef.utils.LogUtil;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 public class ApplicationUnitTests {
@@ -35,7 +37,7 @@ public class ApplicationUnitTests {
         TrackVisit trackVisit = new TrackVisit(row, col, num, Player.RED);
         GameStrategy strategy = new ArrayMatchStrategy(grid, trackVisit);
         strategy.verifyBoard(new Coordinate(3, 1, row, col));
-        Assert.assertFalse(trackVisit.championFound());
+        assertFalse(trackVisit.championFound());
     }
 
     @Test
@@ -54,6 +56,6 @@ public class ApplicationUnitTests {
         TrackVisit trackVisit = new TrackVisit(row, col, num, Player.RED);
         GameStrategy strategy = new ArrayMatchStrategy(grid, trackVisit);
         strategy.verifyBoard(new Coordinate(3, 1, row, col));
-        Assert.assertTrue(trackVisit.championFound());
+        assertTrue(trackVisit.championFound());
     }
 }
