@@ -120,7 +120,7 @@ curl --request GET 'http://localhost:8080/v1/connect4/heartbeat' \
     - [x] Swagger setup 
     - [x] API payload validations
     - [ ] API Security
-    - [ ] HTTP request response log capture
+    - [x] HTTP request response log capture
 - [ ] Enterprise Application practices
     - [x] Log4j2 Implementation
     - [x] Log4j2 patterns & appenders
@@ -131,8 +131,8 @@ curl --request GET 'http://localhost:8080/v1/connect4/heartbeat' \
     - [x] Declaration of separate resources for test scope
     - [x] Mocks & Stubs usages
     - [x] REST API unit testing
-    - [ ] Maven surefire & failsafe plugin usages
-    - [ ] jacoco code coverage
+    - [x] Maven surefire plugin usages
+    - [x] jacoco code coverage
 - [ ] Deployment & Automation pipelines
     - [ ] Build scripts
     - [ ] Dockerfile
